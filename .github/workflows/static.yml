@@ -1,0 +1,19 @@
+name: Deploy site estático
+
+on:
+  push:
+    branches:
+      - main  # ou 'master', depende do nome da sua branch principal
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Deploy para GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./  # A raiz do seu repositório (onde está seu index.html)
