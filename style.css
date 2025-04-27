@@ -1,0 +1,117 @@
+/* styles.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f4f7f9;
+  color: #333;
+}
+
+header {
+  background: #4f8a8b;
+  padding: 1rem;
+  color: #fff;
+  text-align: center;
+  position: sticky;
+  top: 0;
+}
+
+#auth {
+  margin-top: 1rem;
+}
+
+#auth input, #auth button {
+  margin: 0.3rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: none;
+}
+
+main {
+  padding: 1rem;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 10px;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+#calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.day {
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.5rem;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.day.today {
+  background: #c2f0f2;
+}
+
+.day-header {
+  font-weight: bold;
+}
+
+.day-content {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+#closeModal {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #calendar {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
